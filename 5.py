@@ -6,6 +6,6 @@ def unique_elements(input_list):
     return unique_list
 
 user_input = input("Введите числа через пробел: ")
-numbers = list(map(int, user_input.split()))
+numbers = list(map(float, user_input.split()))
 
 print("Уникальные элементы:", unique_elements(numbers))

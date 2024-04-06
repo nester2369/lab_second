@@ -1,13 +1,12 @@
 import os
 
-path = 'C:\Temp'
+directory = input("Введите путь к директории: ")
 
-files = os.listdir(path)
+files = os.listdir(directory)
 
 for file in files:
-    file_path = os.path.join(path, file)
-    file_info = os.stat(file_path)
-    print(f'File name: {file}')
-    print(f'Size: {file_info.st_size} bytes')
-    print(f'Creation time: {file_info.st_ctime}')
-    print()
+    file_path = os.path.join(directory, file)
+    file_size = os.path.getsize(file_path)
+    file_creation_time = os.path.getctime(file_path)
+    file_info = f"Имя файла: {file}, Размер: {file_size} байт, Дата создания: {file_creation_time}"
+    print(file_info)
